@@ -1,0 +1,10 @@
+<hibernate-mapping package="org.csu.mypetstore.domain">
+
+    <class name="Bannerdata" table="bannerdata" lazy="false">
+        <id name="favouriteCategoryId" column="favcategory">
+            <generator class="assigned"/>
+
+        </id>
+        <property name="bannerName" column="bannername"/>
+    </class>
+</hibernate-mapping>

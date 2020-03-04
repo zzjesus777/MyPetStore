@@ -1,0 +1,14 @@
+<hibernate-mapping package="org.csu.mypetstore.domain">
+
+    <class name="LineItem" table="lineitem" lazy="false">
+        <id name="orderId" column="orderid">
+            <generator class="assigned"/>
+
+        </id>
+        <property name="lineNumber" column="linenum"/>
+        <property name="itemId" column="itemid"/>
+        <property name="quantity" column="quantity"/>
+        <property name="unitPrice" column="unitprice"/>
+        <many-to-one name="Item" column="itemid" unique="true"  insert="false" update="false" cascade="all"/>
+    </class>
+</hibernate-mapping>

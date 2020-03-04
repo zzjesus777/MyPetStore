@@ -1,0 +1,10 @@
+<hibernate-mapping package="org.csu.mypetstore.domain">
+
+    <class name="Sequence" table="sequence" lazy="false">
+        <id name="name" column="name">
+            <generator class="assigned"/>
+
+        </id>
+        <property name="nextId" column="nextid"/>
+    </class>
+</hibernate-mapping>

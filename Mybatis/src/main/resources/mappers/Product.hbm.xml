@@ -1,0 +1,12 @@
+<hibernate-mapping package="org.csu.mypetstore.domain">
+
+    <class name="Product" table="product" lazy="false">
+        <id name="productId" column="productid">
+            <generator class="assigned"/>
+
+        </id>
+        <property name="categoryId" column="category"/>
+        <property name="name" column="name"/>
+        <property name="description" column="descn"/>
+    </class>
+</hibernate-mapping>

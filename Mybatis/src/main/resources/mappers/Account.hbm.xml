@@ -1,0 +1,27 @@
+<hibernate-mapping package="org.csu.mypetstore.domain">
+
+    <class name="Account" table="account" lazy="false">
+
+        <id name="username" column="userid" >
+            <generator class="assigned"/>
+
+        </id>
+
+        <!--非主键映射，属性和列名一一对应-->
+        <property name="email" column="email"/>
+        <property name="firstName" column="firstName"/>
+        <property name="lastName" column="lastName"/>
+        <property name="status" column="status"/>
+        <property name="address1" column="addr1"/>
+        <property name="address2" column="addr2"/>
+        <property name="city" column="city"/>
+        <property name="state" column="state"/>
+        <property name="zip" column="zip"/>
+        <property name="country" column="country"/>
+        <property name="phone" column="phone"/>
+
+        <many-to-one name="Profile" column="userid" unique="true"  insert="false" update="false" cascade="all"/>
+        <many-to-one name="Signon" column="userid" unique="true"  insert="false" update="false"  cascade="all"/>
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,10 @@
+<hibernate-mapping package="org.csu.mypetstore.domain">
+
+    <class name="Signon" table="signon" lazy="false">
+        <id name="username" column="username">
+            <generator class="assigned"/>
+
+        </id>
+        <property name="password" column="password"/>
+    </class>
+</hibernate-mapping>

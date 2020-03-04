@@ -1,0 +1,26 @@
+<hibernate-mapping package="org.csu.mypetstore.domain">
+
+<class name="Item" table="item" lazy="false">
+
+    <id name="itemId" column="itemid" >
+        <generator class="assigned"/>
+
+    </id>
+
+    <!--非主键映射，属性和列名一一对应-->
+    <property name="productId" column="productid"/>
+    <property name="listPrice" column="listprice"/>
+    <property name="unitCost" column="unitcost"/>
+    <property name="status" column="status"/>
+    <property name="supplierId" column="supplier"/>
+    <property name="attribute1" column="attr1"/>
+    <property name="attribute2" column="attr2"/>
+    <property name="attribute3" column="attr3"/>
+    <property name="attribute4" column="attr4"/>
+    <property name="attribute5" column="attr5"/>
+
+    <many-to-one name="Product" column="productId" unique="true"  insert="false" update="false" cascade="all"/>
+    <many-to-one name="Inventory" column="itemId" unique="true"  insert="false" update="false"  cascade="all"/>
+</class>
+
+</hibernate-mapping>

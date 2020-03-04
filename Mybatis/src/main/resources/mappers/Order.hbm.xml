@@ -1,0 +1,34 @@
+<hibernate-mapping package="org.csu.mypetstore.domain">
+
+    <class name="Order" table="orders" lazy="false">
+        <id name="orderId" column="orderid">
+            <generator class="assigned"/>
+        </id>
+        <property name="username" column="userid"/>
+        <property name="orderDate" column="orderdate" type="java.util.Date"/>
+        <property name="shipAddress1" column="shipaddr1"/>
+        <property name="shipAddress2" column="shipaddr2"/>
+        <property name="shipCity" column="shipcity"/>
+        <property name="shipState" column="shipstate"/>
+        <property name="shipZip" column="shipzip"/>
+        <property name="shipCountry" column="shipcountry"/>
+        <property name="courier" column="courier"/>
+        <property name="billAddress1" column="billaddr1"/>
+        <property name="billAddress2" column="billaddr2"/>
+        <property name="billCity" column="billcity"/>
+        <property name="billState" column="billstate"/>
+        <property name="billZip" column="billzip"/>
+        <property name="billCountry" column="billcountry"/>
+        <property name="totalPrice" column="totalprice"/>
+        <property name="billToFirstName" column="billtofirstname"/>
+        <property name="billToLastName" column="billtolastname"/>
+        <property name="shipToFirstName" column="shiptofirstname"/>
+        <property name="shipToLastName" column="shiptolastname"/>
+        <property name="creditCard" column="creditcard"/>
+        <property name="expiryDate" column="exprdate"/>
+        <property name="cardType" column="cardtype"/>
+        <property name="locale" column="locale"/>
+
+        <many-to-one name="Orderstatus" column="orderid" unique="true" insert="false" update="false"/>
+    </class>
+</hibernate-mapping>

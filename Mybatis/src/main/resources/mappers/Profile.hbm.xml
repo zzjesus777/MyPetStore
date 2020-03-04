@@ -1,0 +1,15 @@
+<hibernate-mapping package="org.csu.mypetstore.domain">
+
+    <class name="Profile" table="profile" lazy="false">
+        <id name="username" column="userid">
+            <generator class="assigned"/>
+
+        </id>
+        <property name="favouriteCategoryId" insert="false" update="false" column="favcategory"/>
+        <property name="languagePreference" column="langpref"/>
+        <property name="listOption" column="mylistopt"/>
+        <property name="bannerOption" column="banneropt"/>
+
+        <many-to-one name="Bannerdata" column="favcategory" unique="true" />
+    </class>
+</hibernate-mapping>
